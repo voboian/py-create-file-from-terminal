@@ -21,7 +21,7 @@ def create_file(file_name: str, path_parts: list) -> None:
 
     with open(file_path, "a") as file:
         if is_exist:
-            file.write(f"\n\n")
+            file.write("\n\n")
         file.write(f"{content}")
 
 
