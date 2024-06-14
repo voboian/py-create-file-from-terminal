@@ -33,8 +33,8 @@ def create_dir(path_parts: list) -> None:
 
 def get_path(path_parts: list) -> str:
     parent_path: str = os.getcwd()
-    for dir in path_parts:
-        parent_path = os.path.join(parent_path, dir)
+    for folder in path_parts:
+        parent_path = os.path.join(parent_path, folder)
     return parent_path
 
 
