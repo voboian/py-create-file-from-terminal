@@ -46,8 +46,12 @@ def main() -> None:
         dir_index = args.index("-d")
         file_index = args.index("-f")
 
-        path_parts = args[dir_index + 1:file_index]
-        file_name = args[file_index + 1]
+        if dir_index < file_index:
+            path_parts = args[dir_index + 1:file_index]
+            file_name = args[file_index + 1]
+        else:
+            path_parts = args[dir_index + 1:]
+            file_name = args[file_index + 1:dir_index][0]
 
         create_dir(path_parts)
         create_file(file_name, path_parts)
