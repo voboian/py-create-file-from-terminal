@@ -27,8 +27,7 @@ def create_file(file_name: str, path_parts: list) -> None:
 
 def create_dir(path_parts: list) -> None:
     parent_path = get_path(path_parts)
-    if not os.path.exists(parent_path):
-        os.makedirs(parent_path)
+    os.makedirs(parent_path, exist_ok=True)
 
 
 def get_path(path_parts: list) -> str:
